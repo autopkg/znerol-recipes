@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>io.prometheus.NodeExporter</string>
+	<key>KeepAlive</key>
+	<true/>
+	<key>UserName</key>
+	<string>_prometheus</string>
+	<key>GroupName</key>
+	<string>_prometheus</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/NodeExporter/node_exporter</string>
+		<string>--collectors.enabled</string>
+		<string>cpu,filesystem,loadavg,meminfo,netdev</string>
+		<string>--collector.textfile.directory</string>
+		<string>/private/var/spool/node-exporter-textfiles</string>
+	</array>
+</dict>
+</plist>
