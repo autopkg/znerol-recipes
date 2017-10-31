@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>NodeExporterLaunchDaemon</string>
 			<key>VERSION</key>
-			<string>1.0</string>
+			<string>1.1</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>0.2.0</string>
@@ -28,8 +28,6 @@
 						<string>%RECIPE_DIR%/NodeExporterLaunchDaemon/payload</string>
 						<key>scripts</key>
 						<string>%RECIPE_DIR%/NodeExporterLaunchDaemon/scripts</string>
-						<key>pkgdir</key>
-						<string>%RECIPE_DIR%/NodeExporterLaunchDaemon/build</string>
 						<key>pkgname</key>
 						<string>%NAME%-%VERSION%</string>
 						<key>version</key>
