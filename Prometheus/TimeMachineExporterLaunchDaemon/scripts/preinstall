@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+if /bin/launchctl list "io.prometheus.TimeMachineExporter" &> /dev/null; then
+    /bin/launchctl unload "/Library/LaunchDaemons/io.prometheus.TimeMachineExporter.plist"
+fi
