@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest Apple Time Machine Exporter and wraps it into a pkg.</string>
+		<string>Downloads the latest Apple Time Machine archive and wraps it into a pkg.</string>
 		<key>Identifier</key>
 		<string>com.github.znerol.pkg.TimeMachineExporter</string>
 		<key>Input</key>
@@ -33,11 +33,22 @@
 			</dict>
 			<dict>
 				<key>Processor</key>
+				<string>Unarchiver</string>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%pkgroot%/Library</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
 				<string>FileFinder</string>
 				<key>Arguments</key>
 				<dict>
 					<key>pattern</key>
-					<string>%pkgroot%/Library/timemachine_exporter</string>
+					<string>%pkgroot%/Library/timemachine_exporter*</string>
 				</dict>
 			</dict>
 			<dict>
