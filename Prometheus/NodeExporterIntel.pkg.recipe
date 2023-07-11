@@ -5,16 +5,16 @@
 		<key>Description</key>
 		<string>Downloads the latest Prometheus Node Exporter archive and wraps it into a pkg.</string>
 		<key>Identifier</key>
-		<string>com.github.znerol.pkg.NodeExporter</string>
+		<string>com.github.znerol.pkg.NodeExporterIntel</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>
-			<string>NodeExporter</string>
+			<string>NodeExporterIntel</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>0.2.0</string>
 		<key>ParentRecipe</key>
-		<string>com.github.znerol.download.NodeExporter</string>
+		<string>com.github.znerol.download.NodeExporterIntel</string>
 		<key>Process</key>
 		<array>
 			<dict>
