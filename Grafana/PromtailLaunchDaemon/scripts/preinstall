@@ -2,6 +2,6 @@
 
 set -e
 
-if /bin/launchctl list "com.grafana.promtail" &> /dev/null; then
-    /bin/launchctl unload "/Library/LaunchDaemons/com.grafana.promtail.plist"
+if /bin/launchctl print "system/com.grafana.promtail" &> /dev/null; then
+    /bin/launchctl bootout "system/com.grafana.promtail"
 fi

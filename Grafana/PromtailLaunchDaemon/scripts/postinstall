@@ -26,4 +26,7 @@ $dscl . -read "/Users/${user}" &> /dev/null || {
     $dscl . -create /Users/${user} RealName "Promtail log shipping"
 }
 
-/bin/launchctl load "/Library/LaunchDaemons/com.grafana.promtail.plist"
+mkdir -p /private/var/spool/promtail
+chown _promtail:_promtail /private/var/spool/promtail
+
+/bin/launchctl bootstrap system "/Library/LaunchDaemons/com.grafana.promtail.plist"
