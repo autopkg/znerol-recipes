@@ -26,7 +26,7 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>pkgdirs</key>
 					<dict>
-						<key>Library</key>
+						<key>Library/Promtail</key>
 						<string>0775</string>
 					</dict>
 				</dict>
@@ -37,7 +37,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>destination_path</key>
-					<string>%pkgroot%/Library</string>
+					<string>%pkgroot%/Library/Promtail</string>
 					<key>purge_destination</key>
 					<true/>
 				</dict>
@@ -48,7 +48,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>pattern</key>
-					<string>%pkgroot%/Library/promtail*</string>
+					<string>%pkgroot%/Library/Promtail/promtail*</string>
 				</dict>
 			</dict>
 			<dict>
@@ -59,7 +59,7 @@
 					<key>source</key>
 					<string>%found_filename%</string>
 					<key>target</key>
-					<string>%pkgroot%/Library/promtail</string>
+					<string>%pkgroot%/Library/Promtail/promtail</string>
 				</dict>
 			</dict>
 			<dict>
