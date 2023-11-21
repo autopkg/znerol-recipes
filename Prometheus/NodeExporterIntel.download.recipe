@@ -5,11 +5,11 @@
 	<key>Description</key>
 		<string>Downloads the latest Prometheus Node Exporter from GitHub.</string>
 	<key>Identifier</key>
-	<string>com.github.znerol.download.NodeExporter</string>
+	<string>com.github.znerol.download.NodeExporterIntel</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>NodeExporter</string>
+		<string>NodeExporterIntel</string>
 	</dict>
 	<key>Process</key>
 	<array>

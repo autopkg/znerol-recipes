@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+		<string>Downloads the latest Prometheus Node Exporter from GitHub.</string>
+	<key>Identifier</key>
+	<string>com.github.znerol.download.NodeExporterAppleSilicon</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>NodeExporterAppleSilicon</string>
+	</dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>node_exporter-.+\.darwin-arm64.tar.gz</string>
+				<key>github_repo</key>
+				<string>prometheus/node_exporter</string>
+				<key>include_prereleases</key>
+				<false/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
