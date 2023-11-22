@@ -9,9 +9,9 @@ dscl=/usr/bin/dscl
 $dscl . -read "/Users/${user}" &> /dev/null || {
     # We need to find a free UID/GID
     uid=200
-    while $($dscl . -list /Users uid | grep -q "\b${uid}$") || \
-        $($dscl . -list /Groups gid | grep -q "\b${uid}$"); do
-        uid=$((${uid} + 1))
+    while $dscl . -list /Users uid | grep -q "\b${uid}$" || \
+        $dscl . -list /Groups gid | grep -q "\b${uid}$"; do
+        uid=$((uid + 1))
     done
     $dscl . -create /Groups/${group}
     $dscl . -create /Groups/${group} PrimaryGroupID ${uid}
