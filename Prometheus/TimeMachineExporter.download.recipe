@@ -20,8 +20,8 @@
 				<string>timemachine_exporter</string>
 				<key>github_repo</key>
 				<string>znerol/prometheus-timemachine-exporter</string>
-				<key>include_prereleases</key>
-				<false/>
+				<key>latest_only</key>
+				<true/>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
