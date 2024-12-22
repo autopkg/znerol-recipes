@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest Grafana Promtail from GitHub.
+
+Use the ARCH input variable to specify the desired architecture. Values include:
+- x86_64 (default, Intel)
+- arm64 (Apple Silicon)
+</string>
+	<key>Identifier</key>
+	<string>com.github.znerol.download.Promtail</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
+		<key>NAME</key>
+		<string>Promtail</string>
+	</dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>-x86_64</string>
+				<key>input_string</key>
+				<string>promtail.darwin-%ARCH%.zip</string>
+				<key>replace</key>
+				<string>-amd64</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>%output_string%</string>
+				<key>github_repo</key>
+				<string>grafana/loki</string>
+				<key>latest_only</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
