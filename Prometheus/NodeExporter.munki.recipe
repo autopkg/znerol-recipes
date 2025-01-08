@@ -21,8 +21,6 @@ autopkg repo-add homebysix-recipes
 		<string>Utilities</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
-		<key>NAME</key>
-		<string>NodeExporter</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
