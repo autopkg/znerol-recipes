@@ -16,10 +16,7 @@ autopkg repo-add homebysix-recipes
 	<key>Identifier</key>
 	<string>com.github.znerol.pkg.Promtail</string>
 	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>Promtail</string>
-	</dict>
+	<dict/>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
