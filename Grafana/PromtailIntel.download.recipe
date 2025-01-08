@@ -14,6 +14,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The Promtail recipes have been consolidated into a single set that supports multiple architectures. Please switch to the new recipes and override the ARCH input variable as desired. These Intel-specific recipes are deprecated and will be removed in the future.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>

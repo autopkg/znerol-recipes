@@ -3,30 +3,45 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-		<string>Downloads the latest Grafana Promtail from GitHub.</string>
+	<string>Downloads the latest Grafana Promtail from GitHub.
+
+Use the ARCH input variable to specify the desired architecture. Values include:
+- x86_64 (default, Intel)
+- arm64 (Apple Silicon)
+
+This recipe depends on homebysix's FindAndReplace.  Add homebysix's repo via:
+
+autopkg repo-add homebysix-recipes
+</string>
 	<key>Identifier</key>
-	<string>com.github.znerol.download.PromtailAppleSilicon</string>
+	<string>com.github.znerol.download.Promtail</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>NAME</key>
-		<string>PromtailAppleSilicon</string>
+		<string>Promtail</string>
 	</dict>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>The Promtail recipes have been consolidated into a single set that supports multiple architectures. Please switch to the new recipes and override the ARCH input variable as desired. These Apple Silicon-specific recipes are deprecated and will be removed in the future.</string>
+				<key>find</key>
+				<string>-x86_64</string>
+				<key>input_string</key>
+				<string>promtail.darwin-%ARCH%.zip</string>
+				<key>replace</key>
+				<string>-amd64</string>
 			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>promtail.darwin-arm64.zip</string>
+				<string>%output_string%</string>
 				<key>github_repo</key>
 				<string>grafana/loki</string>
 				<key>latest_only</key>
